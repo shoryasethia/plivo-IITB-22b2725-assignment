@@ -30,7 +30,6 @@ PII-only metrics: P=1.000 R=0.877 F1=0.935
 Latency over 50 runs (batch_size=1, CPU):
   p50: 8.35 ms
   p95: 9.51 ms
-
 ```
 
 ---
@@ -137,16 +136,6 @@ All prediction files are available in the `out/` directory:
 - `out/config.json` - Model configuration
 - `out/pytorch_model.bin` - Trained weights
 - `out/tokenizer files` - Tokenizer configuration
-
----
-
-## GitHub Repository
-
-**Repository URL**: https://github.com/shoryasethia/plivo-IITB-22b2725-assignment
-
-**Output Files**: https://github.com/shoryasethia/plivo-IITB-22b2725-assignment/tree/main/out
-
-**Final Metrics**: https://github.com/shoryasethia/plivo-IITB-22b2725-assignment/blob/main/README.md
 
 ---
 
