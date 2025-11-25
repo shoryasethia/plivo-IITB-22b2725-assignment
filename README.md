@@ -55,13 +55,13 @@ This implementation focuses on achieving high accuracy while maintaining fast in
 
 1. **Custom Lightweight Classification Head**: I replaced the standard AutoModelForTokenClassification with a custom 2-layer MLP architecture. This change significantly reduces the model size and improves inference speed without sacrificing accuracy.
 
-2. **Optimized Sequence Length**: By reducing the maximum sequence length from 256 to 128 tokens, the model processes inputs more quickly while still capturing the essential context needed for accurate PII detection.
+2. **Optimized Sequence Length**: The model uses a default max sequence length of 256 tokens during training to capture full context. For inference, this can be reduced to 128 tokens for faster processing while maintaining accuracy.
 
 3. **Enhanced Span Decoding**: The BIO-to-span conversion logic has been refined to better handle entity boundaries and edge cases, leading to more accurate entity extraction.
 
-4. **Regularization**: Dropout (0.1) was added to prevent overfitting and improve the model's ability to generalize to noisy, real-world STT transcripts.
+4. **Regularization**: Multi-level dropout (0.2 at model level, 0.15 in classifier) was implemented to prevent overfitting and improve the model's ability to generalize to noisy, real-world STT transcripts.
 
-5. **Hyperparameter Tuning**: Through experimentation, I optimized the number of epochs, batch size, and learning rate to achieve the best balance between training time and model performance.
+5. **Hyperparameter Tuning**: Through experimentation, I optimized the training configuration (4 epochs, batch size 8, learning rate 3e-5) to achieve the best balance between training time and model performance.
 
 ---
 
