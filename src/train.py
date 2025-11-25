@@ -17,10 +17,11 @@ def parse_args():
     ap.add_argument("--dev", default="data/dev.jsonl")
     ap.add_argument("--out_dir", default="out")
     ap.add_argument("--batch_size", type=int, default=16)
-    ap.add_argument("--epochs", type=int, default=5)
+    ap.add_argument("--epochs", type=int, default=6)
     ap.add_argument("--lr", type=float, default=3e-5)
-    ap.add_argument("--max_length", type=int, default=128)
-    ap.add_argument("--dropout", type=float, default=0.1)
+    ap.add_argument("--max_length", type=int, default=96)
+    ap.add_argument("--dropout", type=float, default=0.15)
+    ap.add_argument("--weight_decay", type=float, default=0.01)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     return ap.parse_args()
 
@@ -43,7 +44,7 @@ def main():
     model.to(args.device)
     model.train()
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     total_steps = len(train_dl) * args.epochs
     scheduler = get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=int(0.1 * total_steps), num_training_steps=total_steps
@@ -56,8 +57,12 @@ def main():
             attention_mask = torch.tensor(batch["attention_mask"], device=args.device)
             labels = torch.tensor(batch["labels"], device=args.device)
 
-            outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
-            loss = outputs.loss
+            # Forward pass with custom model (returns logits)
+            logits = model(input_ids=input_ids, attention_mask=attention_mask)
+            
+            # Compute loss manually (flatten logits & labels, ignore padding -100)
+            loss_fct = torch.nn.CrossEntropyLoss(ignore_index=-100)
+            loss = loss_fct(logits.view(-1, logits.size(-1)), labels.view(-1))
 
             optimizer.zero_grad()
             loss.backward()
@@ -69,7 +74,8 @@ def main():
         avg_loss = running_loss / max(1, len(train_dl))
         print(f"Epoch {epoch+1} average loss: {avg_loss:.4f}")
 
-    model.save_pretrained(args.out_dir)
+    # Save custom model weights
+    torch.save(model.state_dict(), os.path.join(args.out_dir, "pytorch_model.bin"))
     tokenizer.save_pretrained(args.out_dir)
     print(f"Saved model + tokenizer to {args.out_dir}")
 

@@ -2,12 +2,6 @@
   "stress_0001": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -94,12 +88,6 @@
   "stress_0005": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -112,12 +100,6 @@
     },
     {
       "start": 38,
-      "end": 42,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 43,
       "end": 48,
       "label": "PERSON_NAME",
       "pii": true
@@ -138,12 +120,6 @@
   "stress_0006": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -230,12 +206,6 @@
   "stress_0010": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -248,12 +218,6 @@
     },
     {
       "start": 40,
-      "end": 44,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 45,
       "end": 50,
       "label": "PERSON_NAME",
       "pii": true
@@ -342,12 +306,6 @@
   "stress_0015": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -400,13 +358,7 @@
   "stress_0017": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -418,12 +370,6 @@
     },
     {
       "start": 37,
-      "end": 41,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 42,
       "end": 47,
       "label": "PERSON_NAME",
       "pii": true
@@ -444,13 +390,7 @@
   "stress_0018": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -502,13 +442,7 @@
   "stress_0020": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -540,12 +474,6 @@
   "stress_0021": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -558,12 +486,6 @@
     },
     {
       "start": 35,
-      "end": 39,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 40,
       "end": 45,
       "label": "PERSON_NAME",
       "pii": true
@@ -630,12 +552,6 @@
     },
     {
       "start": 36,
-      "end": 40,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 41,
       "end": 46,
       "label": "PERSON_NAME",
       "pii": true
@@ -656,12 +572,6 @@
   "stress_0025": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -694,13 +604,7 @@
   "stress_0026": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -738,12 +642,6 @@
     },
     {
       "start": 94,
-      "end": 100,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 101,
       "end": 147,
       "label": "PHONE",
       "pii": true
@@ -810,12 +708,6 @@
   "stress_0030": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -860,12 +752,6 @@
     },
     {
       "start": 36,
-      "end": 40,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 41,
       "end": 46,
       "label": "PERSON_NAME",
       "pii": true
@@ -886,13 +772,7 @@
   "stress_0032": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -924,12 +804,6 @@
   "stress_0033": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1022,12 +896,6 @@
   "stress_0037": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1122,12 +990,6 @@
   "stress_0042": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1214,12 +1076,6 @@
   "stress_0046": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1258,12 +1114,6 @@
     },
     {
       "start": 94,
-      "end": 97,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 98,
       "end": 141,
       "label": "PHONE",
       "pii": true
@@ -1278,12 +1128,6 @@
   "stress_0048": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1295,7 +1139,7 @@
       "pii": true
     },
     {
-      "start": 39,
+      "start": 34,
       "end": 44,
       "label": "PERSON_NAME",
       "pii": true
@@ -1316,12 +1160,6 @@
   "stress_0049": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1386,7 +1224,7 @@
     },
     {
       "start": 231,
-      "end": 280,
+      "end": 273,
       "label": "EMAIL",
       "pii": true
     }
@@ -1408,13 +1246,7 @@
   "stress_0053": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -1506,12 +1338,6 @@
   "stress_0057": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1558,13 +1384,7 @@
   "stress_0059": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -1576,12 +1396,6 @@
     },
     {
       "start": 34,
-      "end": 38,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 39,
       "end": 44,
       "label": "PERSON_NAME",
       "pii": true
@@ -1602,12 +1416,6 @@
   "stress_0060": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1643,12 +1451,6 @@
       "end": 33,
       "label": "PHONE",
       "pii": true
-    },
-    {
-      "start": 55,
-      "end": 60,
-      "label": "PHONE",
-      "pii": true
     }
   ],
   "stress_0062": [
@@ -1660,12 +1462,6 @@
     },
     {
       "start": 94,
-      "end": 100,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 101,
       "end": 153,
       "label": "PHONE",
       "pii": true
@@ -1680,12 +1476,6 @@
   "stress_0063": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1697,7 +1487,7 @@
       "pii": true
     },
     {
-      "start": 37,
+      "start": 32,
       "end": 42,
       "label": "PERSON_NAME",
       "pii": true
@@ -1724,18 +1514,6 @@
     },
     {
       "start": 94,
-      "end": 113,
-      "label": "PHONE",
-      "pii": true
-    },
-    {
-      "start": 114,
-      "end": 144,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 145,
       "end": 149,
       "label": "PHONE",
       "pii": true
@@ -1770,12 +1548,6 @@
   "stress_0066": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1788,12 +1560,6 @@
     },
     {
       "start": 39,
-      "end": 43,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 44,
       "end": 49,
       "label": "PERSON_NAME",
       "pii": true
@@ -1814,13 +1580,7 @@
   "stress_0067": [
     {
       "start": 0,
-      "end": 4,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -1852,12 +1612,6 @@
   "stress_0068": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1910,12 +1664,6 @@
     },
     {
       "start": 94,
-      "end": 97,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 98,
       "end": 142,
       "label": "PHONE",
       "pii": true
@@ -1950,12 +1698,6 @@
   "stress_0072": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -1988,12 +1730,6 @@
   "stress_0073": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -2100,7 +1836,7 @@
     },
     {
       "start": 94,
-      "end": 137,
+      "end": 140,
       "label": "PHONE",
       "pii": true
     },
@@ -2114,12 +1850,6 @@
   "stress_0079": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -2132,12 +1862,6 @@
     },
     {
       "start": 34,
-      "end": 38,
-      "label": "EMAIL",
-      "pii": true
-    },
-    {
-      "start": 39,
       "end": 44,
       "label": "PERSON_NAME",
       "pii": true
@@ -2158,12 +1882,6 @@
   "stress_0080": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -2196,12 +1914,6 @@
   "stress_0081": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -2234,13 +1946,7 @@
   "stress_0082": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -2286,12 +1992,6 @@
   "stress_0084": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
       "end": 15,
       "label": "PERSON_NAME",
       "pii": true
@@ -2364,7 +2064,7 @@
     },
     {
       "start": 94,
-      "end": 142,
+      "end": 145,
       "label": "PHONE",
       "pii": true
     },
@@ -2398,13 +2098,7 @@
   "stress_0089": [
     {
       "start": 0,
-      "end": 7,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -2524,13 +2218,7 @@
   "stress_0095": [
     {
       "start": 0,
-      "end": 4,
-      "label": "PERSON_NAME",
-      "pii": true
-    },
-    {
-      "start": 11,
-      "end": 13,
+      "end": 15,
       "label": "PERSON_NAME",
       "pii": true
     },
@@ -2568,25 +2256,13 @@
     },
     {
       "start": 94,
-      "end": 99,
-      "label": "PHONE",
-      "pii": true
-    },
-    {
-      "start": 100,
-      "end": 134,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 135,
       "end": 143,
       "label": "PHONE",
       "pii": true
     },
     {
       "start": 163,
-      "end": 199,
+      "end": 221,
       "label": "EMAIL",
       "pii": true
     }
@@ -2620,12 +2296,6 @@
     },
     {
       "start": 94,
-      "end": 97,
-      "label": "CREDIT_CARD",
-      "pii": true
-    },
-    {
-      "start": 98,
       "end": 144,
       "label": "PHONE",
       "pii": true
@@ -2673,12 +2343,6 @@
     {
       "start": 27,
       "end": 33,
-      "label": "PHONE",
-      "pii": true
-    },
-    {
-      "start": 55,
-      "end": 60,
       "label": "PHONE",
       "pii": true
     }

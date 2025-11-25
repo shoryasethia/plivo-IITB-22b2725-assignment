@@ -5,7 +5,7 @@
   ],
   "attention_dropout": 0.1,
   "dim": 768,
-  "dropout": 0.1,
+  "dropout": 0.15,
   "hidden_dim": 3072,
   "id2label": {
     "0": "O",
@@ -48,7 +48,7 @@
   "n_layers": 6,
   "pad_token_id": 0,
   "qa_dropout": 0.1,
-  "seq_classif_dropout": 0.1,
+  "seq_classif_dropout": 0.15,
   "sinusoidal_pos_embds": false,
   "tie_weights_": true,
   "torch_dtype": "float32",

@@ -1,8 +1,9 @@
 import json
 import argparse
 import torch
-from transformers import AutoTokenizer, AutoModelForTokenClassification
+from transformers import AutoTokenizer
 from labels import ID2LABEL, label_is_pii
+from model import create_model
 import os
 
 
@@ -67,14 +68,22 @@ def main():
     ap.add_argument("--model_name", default=None)
     ap.add_argument("--input", default="data/dev.jsonl")
     ap.add_argument("--output", default="out/dev_pred.json")
-    ap.add_argument("--max_length", type=int, default=256)
+    ap.add_argument("--max_length", type=int, default=96)
     ap.add_argument(
         "--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
     tokenizer = AutoTokenizer.from_pretrained(
         args.model_dir if args.model_name is None else args.model_name)
-    model = AutoModelForTokenClassification.from_pretrained(args.model_dir)
+    
+    # Load custom model
+    model = create_model(args.model_dir if args.model_name is None else args.model_name)
+    
+    # Load weights
+    model_path = os.path.join(args.model_dir, "pytorch_model.bin")
+    if os.path.exists(model_path):
+        model.load_state_dict(torch.load(model_path, map_location=args.device))
+    
     model.to(args.device)
     model.eval()
 
@@ -98,9 +107,8 @@ def main():
             attention_mask = enc["attention_mask"].to(args.device)
 
             with torch.no_grad():
-                out = model(input_ids=input_ids, attention_mask=attention_mask)
-                logits = out.logits[0]
-                pred_ids = logits.argmax(dim=-1).cpu().tolist()
+                logits = model(input_ids=input_ids, attention_mask=attention_mask)
+                pred_ids = logits[0].argmax(dim=-1).cpu().tolist()
 
             spans = bio_to_spans(text, offsets, pred_ids)
             ents = []
