@@ -2,11 +2,9 @@ import json
 import time
 import argparse
 import statistics
-import os
 
 import torch
-from transformers import AutoTokenizer
-from model import create_model
+from transformers import AutoTokenizer, AutoModelForTokenClassification
 
 
 def main():
@@ -14,19 +12,13 @@ def main():
     ap.add_argument("--model_dir", default="out")
     ap.add_argument("--model_name", default=None)
     ap.add_argument("--input", default="data/dev.jsonl")
-    ap.add_argument("--max_length", type=int, default=96)
+    ap.add_argument("--max_length", type=int, default=256)
     ap.add_argument("--runs", type=int, default=50)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_dir if args.model_name is None else args.model_name)
-    
-    # Load custom model
-    model = create_model(args.model_dir if args.model_name is None else args.model_name)
-    model_path = os.path.join(args.model_dir, "pytorch_model.bin")
-    if os.path.exists(model_path):
-        model.load_state_dict(torch.load(model_path, map_location=args.device))
-    
+    model = AutoModelForTokenClassification.from_pretrained(args.model_dir)
     model.to(args.device)
     model.eval()
 
