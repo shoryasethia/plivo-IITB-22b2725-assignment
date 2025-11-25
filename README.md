@@ -134,6 +134,10 @@ All prediction files are available in the `out/` directory:
 - `out/dev_pred.json` - Dev set predictions
 - `out/stress_pred.json` - Stress test predictions
 - `out/test_pred.json` - Test set predictions
+- `out/config.json` - Model configuration
+- `out/tokenizer files` - Tokenizer configuration
+
+**Note**: The trained model weights (`model.safetensors` - 253MB) are excluded from the repository due to GitHub's file size limit. The model can be retrained using the provided training script and data.
 
 ## Entity Labels
 
