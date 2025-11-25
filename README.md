@@ -1,10 +1,9 @@
 # PII NER Assignment - Shorya Sethia (22B2725)
 
-This repository contains a token-level NER model for detecting PII entities in noisy STT transcripts.
+This repository contains my implementation of a token-level NER model for detecting PII entities in noisy STT transcripts.
 
 **Candidate**: Shorya Sethia  
-**College ID**: 22B2725  
-**Department**: Engineering Physics
+**Roll No.**: 22B2725  
 
 ---
 
@@ -32,20 +31,21 @@ Latency over 50 runs (batch_size=1, CPU):
   p50: 8.35 ms
   p95: 9.51 ms
 
-Note: Both p50 and p95 well under 20ms target.
 ```
 
 ---
 
 ## Model Configuration
 
-- **Base Model**: DistilBERT-base-uncased
-- **Architecture**: Custom lightweight classification head (768  384  15 labels)
-- **Max Length**: 128 tokens (optimized for latency)
-- **Epochs**: 5
-- **Batch Size**: 16
+- **Base Model**: distilbert-base-uncased
+- **Architecture**: Custom lightweight classification head (768 → 384 → 15 labels)
+- **Max Length**: 256 tokens (default), 128 for inference optimization
+- **Epochs**: 4
+- **Batch Size**: 8
 - **Learning Rate**: 3e-5
-- **Dropout**: 0.1
+- **Dropout**: 0.2 (model-level), 0.15 (classifier-level)
+- **Optimizer**: AdamW with linear warmup (10% of total steps)
+- **Loss Function**: CrossEntropyLoss
 
 ---
 
@@ -79,11 +79,10 @@ python src/train.py \
   --train data/train.jsonl \
   --dev data/dev.jsonl \
   --out_dir out \
-  --epochs 5 \
-  --batch_size 16 \
+  --epochs 4 \
+  --batch_size 8 \
   --lr 3e-5 \
-  --max_length 128 \
-  --dropout 0.1
+  --max_length 256
 ```
 
 ## Prediction
@@ -93,22 +92,15 @@ python src/train.py \
 python src/predict.py \
   --model_dir out \
   --input data/dev.jsonl \
-  --output out/dev_pred.json \
-  --max_length 128
-
-# Stress set
-python src/predict.py \
-  --model_dir out \
-  --input data/stress.jsonl \
-  --output out/stress_pred.json \
-  --max_length 128
+  --output out/dev_pred.json
 
 # Test set
 python src/predict.py \
   --model_dir out \
   --input data/test.jsonl \
-  --output out/test_pred.json \
-  --max_length 128
+  --output out/test_pred.json
+
+# Optional: Use --max_length 128 for faster inference if needed
 ```
 
 ## Evaluation
@@ -174,22 +166,24 @@ All prediction files are available in the `out/` directory:
 
 ### Optimizations Applied
 
-The following optimizations were made to improve both accuracy and inference speed:
+The following optimizations were implemented:
 
-1. **Hyperparameter Tuning**:
-   - Increased epochs from 3 to 5 for better convergence
-   - Increased batch size from 8 to 16 for more stable gradient updates
-   - Reduced learning rate from 5e-5 to 3e-5 to avoid overshooting optimal weights
-   - Reduced max length from 256 to 128 tokens for faster processing
+1. **Custom Architecture**:
+   - Lightweight 2-layer MLP classification head (768 → 384 → 15) instead of standard token classification head
+   - Dual dropout layers (0.2 model-level, 0.15 classifier-level) for regularization
+   - Reduces parameters while maintaining accuracy
 
-2. **Regularization**:
-   - Added dropout (0.1) throughout the model to prevent overfitting
-   - This helps the model generalize better to unseen data, especially noisy STT transcripts
+2. **Training Configuration**:
+   - 4 epochs with batch size 8 for optimal convergence
+   - AdamW optimizer with learning rate 3e-5
+   - Linear warmup scheduler (10% of total training steps)
+   - CrossEntropyLoss for token-level classification
+   - Default max sequence length 256 tokens to capture full context
 
-3. **Improved Span Decoding**:
-   - Enhanced the BIO-to-span conversion algorithm to better detect entity boundaries
-   - Added better handling of edge cases like overlapping or nested entities
-   - Implemented more robust entity boundary detection logic
+3. **Inference Optimization**:
+   - Can use reduced max_length (e.g., 128) at inference time for faster processing
+   - BIO-to-span conversion with confidence filtering
+   - Batch processing support for production deployments
 
 ---
 
@@ -228,7 +222,7 @@ Repository Root/
 
 - [x] Code repository created and organized
 - [x] All source files modified and working
-- [x] Model trained successfully (5 epochs)
+- [x] Model trained successfully (4 epochs)
 - [x] Dev predictions generated (Macro F1: 0.801, PII F1: 0.935)
 - [x] Test predictions generated
 - [x] Latency measured (p50: 8.35ms, p95: 9.51ms)
